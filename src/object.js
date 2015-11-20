@@ -1,6 +1,5 @@
 'use strict';
 var MixedSchema = require('./mixed')
-  , Promise = require('promise/lib/es6-extensions')
   //, Reference = require('./util/Reference')
   , cloneDeep = require('./util/clone')
   , toposort = require('toposort')

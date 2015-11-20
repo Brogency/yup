@@ -1,6 +1,5 @@
 'use strict';
 var MixedSchema = require('./mixed')
-  , Promise = require('promise/lib/es6-extensions')
   , { mixed, array: locale } = require('./locale.js')
   , { inherits, collectErrors } = require('./util/_');
 
