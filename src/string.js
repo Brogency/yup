@@ -15,8 +15,8 @@ function StringSchema(){
   MixedSchema.call(this, { type: 'string'})
 
   this.transforms.push(function(value) {
-    if( this.isType(value) ) return value
-    return value == null ? '' 
+    if (this.isType(value)) return value
+    return value == null ? ''
       : value.toString ? value.toString() : '' + value
   })
 }
@@ -24,7 +24,7 @@ function StringSchema(){
 inherits(StringSchema, MixedSchema, {
 
   _typeCheck(value) {
-     return typeof value === 'string'
+     return (typeof value === 'string') || (typeof value === 'object' && value instanceof String)
   },
 
   required(msg){
@@ -34,19 +34,19 @@ inherits(StringSchema, MixedSchema, {
   },
 
   min(min, msg){
-    return this.test({ 
-      name: 'min', 
-      exclusive: true, 
+    return this.test({
+      name: 'min',
+      exclusive: true,
       message:  msg || locale.min,
       params: { min },
-      test: value => value == null || value.length >= min 
+      test: value => value == null || value.length >= min
     })
   },
 
   max(max, msg){
-    return this.test({ 
-      name: 'max', 
-      exclusive: true, 
+    return this.test({
+      name: 'max',
+      exclusive: true,
       message: msg || locale.max,
       params: { max },
       test: value => value == null || value.length <= max
@@ -54,8 +54,8 @@ inherits(StringSchema, MixedSchema, {
   },
 
   matches(regex, msg){
-    return this.test({ 
-      message: msg || locale.matches, 
+    return this.test({
+      message: msg || locale.matches,
       params: { regex },
       test: value => value == null || regex.test(value)
     })
