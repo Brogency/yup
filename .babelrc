@@ -27,6 +27,6 @@
   "stage-0"
   ],
 "plugins": [
-  "external-helpers-2"
+  "transform-runtime"
   ]
 }
