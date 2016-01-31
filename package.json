@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/jquense/yup",
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^6.1.20",
     "babel-eslint": "^4.1.4",
     "babel-loader": "^5.3.2",
-    "babel-plugin-external-helpers": "^1.1.1",
+    "babel-plugin-external-helpers-2": "^6.1.4",
     "benchmark": "^2.0.0",
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
@@ -47,6 +47,8 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "case": "^1.2.1",
     "fn-name": "~1.0.1",
     "promise": "~7.0.0",
